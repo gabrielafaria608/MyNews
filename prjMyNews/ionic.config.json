@@ -1,0 +1,7 @@
+{
+  "name": "prjMyNews",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
