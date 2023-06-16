@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'detalhes-noticia',
+    loadChildren: () => import('./detalhes-noticia/detalhes-noticia.module').then( m => m.DetalhesNoticiaPageModule)
+  },
+  {
+    path: 'cadastrar-noticia',
+    loadChildren: () => import('./cadastrar-noticia/cadastrar-noticia.module').then( m => m.CadastrarNoticiaPageModule)
+  },
 ];
 
 @NgModule({
