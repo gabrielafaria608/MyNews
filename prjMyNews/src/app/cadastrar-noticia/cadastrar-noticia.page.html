@@ -1,13 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>cadastrar-noticia</ion-title>
+    <ion-title>Cadastro de Notícias</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastrar-noticia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Subtítulo</ion-label>
+      <ion-input type="text" [(ngModel)]="subtitulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Autor</ion-label>
+      <ion-input [(ngModel)]="autor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input type="text" [(ngModel)]="data"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Imagens</ion-label>
+      <ion-input type="text" [(ngModel)]="imagens"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Destaque</ion-label>
+      <ion-input type="text" [(ngModel)]="destaque"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Resumo</ion-label>
+      <ion-input type="text" [(ngModel)]="resumo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Texto</ion-label>
+      <ion-input type="text" [(ngModel)]="texto"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button expand="block" (click)="cadastrar()">
+      Cadastrar
+    </ion-button>
+  </div>
 </ion-content>
