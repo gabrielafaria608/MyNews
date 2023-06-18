@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "nest-i": "npm i -g @nestjs/cli",
-    "ionic-i":"npm i -g @ionic/cli",
+    "ionic-i": "npm i -g @ionic/cli@6",
+
     "gitconfig-gabi": "git config --local user.name \"Gabriela Faria\" && git config --local user.email \"gabs.s.faria78@gmail.com\"",
     "all-gabi": "npm run gitconfig-gabi && npm run nest-i && npm run ionic-i",
+
     "gitconfig-jhonny": "git config --local user.name \"Jhonny Matheus de Oliveira\" && git config --local user.email \"jhonnymatheus88@gmail.com\"",
     "all-jhonny": "npm run gitconfig-jhonny && npm run nest-i && npm run ionic-i",
+    
     "gitconfig-olivio": "git config --local user.name \"Olivio César\" && git config --local user.email \"cesarbigs@gmail.com\"",
     "all-olivio": "npm run gitconfig-olivio && npm run nest-i && npm run ionic-i"
   },
