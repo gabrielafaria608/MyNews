@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      MY NEWS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <div>
+    <ion-button expand="block" color="secondary" (click)="buscarTodos()">
+      Buscar Todos
+    </ion-button>
+  </div>
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div *ngIf="mensagem">
+      {{ mensagem }}
+    </div>
+    <ion-list *ngIf="!mensagem">
+
+      <ion-item-sliding *ngFor="let noticia of noticias">
+        <ion-item (click)="irParaDetalhes(noticia.id)">
+          {{noticia.imagens}} - {{noticia.titulo}}
+        </ion-item>
+    
+        <ion-item-options>
+          <ion-item-option color="danger"
+          (click)="excluir(noticia.id)">
+            Deletar
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-list>
   </div>
 </ion-content>

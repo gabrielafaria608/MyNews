@@ -1,13 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalhes-noticia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Noticia: {{noticia.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalhes-noticia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list *ngIf="noticia !== undefined">
+    <ion-item>ID: {{noticia.id}}</ion-item>
+    <ion-item>Titulo: {{noticia.titulo}}</ion-item>
+    <ion-item>Subtitulo: {{noticia.subtitulo}}</ion-item>
+    <ion-item>Autor: {{noticia.autor}}</ion-item>
+    <ion-item>Data: {{noticia.data}}</ion-item>
+    <ion-item>Imagens: {{noticia.imagens}}</ion-item>
+    <ion-item>Destaque: {{noticia.destaque}}</ion-item>
+    <ion-item>Resumo: {{noticia.resumo}}</ion-item>
+    <ion-item>Texto: {{noticia.texto}}</ion-item>
+  </ion-list>
 </ion-content>

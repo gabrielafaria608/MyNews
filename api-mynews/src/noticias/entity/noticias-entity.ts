@@ -7,5 +7,5 @@ export class NoticiasEntity {
     imagens: string []
     destaque: string
     resumo: string
-    texto: string 
+    texto: string
 }
