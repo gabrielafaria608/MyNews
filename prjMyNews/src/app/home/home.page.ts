@@ -31,23 +31,13 @@ export class HomePage implements OnInit{
     })
   }
 
-  excluir(id: string) {
-    this.service.excluirNoticia(id).subscribe({
-      next: (resp: any) => {
-        this.mensagem = resp.message
-      }
-    })
-
-    setTimeout(
-      () => {
-        this.noticias = []
-        this.buscarTodos()
-        this.mensagem = ""
-      }, 1500
-    )
-  }
+  
 
   irParaDetalhes(id: string) {
     this.router.navigate(['/detalhes-noticia', {id}])
+  }
+
+  irParaCadastrarNoticia() {
+    this.router.navigate(['/cadastrar-noticia'])
   }
 }

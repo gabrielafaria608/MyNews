@@ -13,7 +13,7 @@ export class CadastrarNoticiaPage implements OnInit {
     subtitulo: string = ''
     autor: string =  ''
     data: string = ''
-    imagens: [] = []
+    imagens: string[] = []
     destaque: string = ''
     resumo: string = ''
     texto: string = ''
@@ -30,7 +30,7 @@ export class CadastrarNoticiaPage implements OnInit {
       subtitulo: this.subtitulo,
       autor: this.autor,
       data: this.data,
-      imagens: this.imagens,
+      imagens: [this.imagens],
       destaque: this.destaque,
       resumo: this.resumo,
       texto: this.texto

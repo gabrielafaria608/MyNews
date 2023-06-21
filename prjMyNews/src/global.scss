@@ -24,3 +24,16 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.design{
+    --background: #F2EFDF;
+    --color: #00010D;
+    --ion-fonte-family: Arial, Helvetica, sans-serif;
+  }
