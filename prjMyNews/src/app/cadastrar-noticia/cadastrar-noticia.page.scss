@@ -1,0 +1,25 @@
+ion-toolbar{
+    --background:#F23005;
+    --color: #F2EFDF;
+    ion-back-button{
+        --color:#F2EFDF;
+    }
+}
+ion-item{
+    --background: #F2EFDF;
+    --color: #00010D;
+    --ion-fonte-family: Arial, Helvetica, sans-serif;
+    ion-label{
+        font-weight:500;
+    }
+}
+ion-content{
+    --background: #F2EFDF;
+    --color: #00010D;
+    --ion-fonte-family: Arial, Helvetica, sans-serif;
+    ion-button{
+        --background:#F23005;
+        --background-hover: #F2622E;
+        --background-activated: #F2622E;
+    }
+}
