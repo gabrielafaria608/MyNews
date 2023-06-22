@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, RequestMethod } from '@nestjs/common';
 import { NoticiasRepository } from './repository/noticias-repository';
 import { NoticiasCadastroDto } from './dto/noticias-cadastro.dto';
 import { NoticiasEntity} from './entity/noticias-entity';
@@ -9,7 +9,81 @@ import { v4 as uuid } from 'uuid';
 export class NoticiasController {
     constructor(
         private readonly _repository: NoticiasRepository
-    ){}
+    ){
+        this.preCadastrarNoticias()
+    }
+
+    private async preCadastrarNoticias() {
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: '',
+                subtitulo: '',
+                autor: '',
+                data: '',
+                imagens: [],
+                destaque: '',
+                resumo: '',
+                texto: ''
+            } as NoticiasEntity
+        )
+
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: '',
+                subtitulo: '',
+                autor: '',
+                data: '',
+                imagens: [],
+                destaque: '',
+                resumo: '',
+                texto: ''
+            } as NoticiasEntity
+        )
+
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: '',
+                subtitulo: '',
+                autor: '',
+                data: '',
+                imagens: [],
+                destaque: '',
+                resumo: '',
+                texto: ''
+            } as NoticiasEntity
+        )
+
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: '',
+                subtitulo: '',
+                autor: '',
+                data: '',
+                imagens: [],
+                destaque: '',
+                resumo: '',
+                texto: ''
+            } as NoticiasEntity
+        )
+
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: '',
+                subtitulo: '',
+                autor: '',
+                data: '',
+                imagens: [],
+                destaque: '',
+                resumo: '',
+                texto: ''
+            } as NoticiasEntity
+        )
+    }
 
     @Post()
     createNoticia(@Body() noticia: NoticiasCadastroDto){
