@@ -9,26 +9,21 @@ import { ViewDidEnter } from '@ionic/angular';
   styleUrls: ['./detalhes-noticia.page.scss'],
 })
 export class DetalhesNoticiaPage implements OnInit {
-  noticia: any = undefined
+  noticia: any
 
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly service: NoticiaService
-  ) {
-    this.buscar(this.activeRoute.snapshot.params['id'])
-
-    console.log(this.activeRoute)
-  }
+  ) {}
 
   ngOnInit() {
+    this.buscar(this.activeRoute.snapshot.params['id'])
   }
 
   buscar(id: string) {
     this.service.buscarUmaNoticia(id).subscribe({
       next: (noticia: any) => {
         this.noticia = noticia
-
-        console.log(this.noticia)
       }
     })
   }
