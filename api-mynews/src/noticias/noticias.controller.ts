@@ -21,7 +21,11 @@ export class NoticiasController {
                 subtitulo: '',
                 autor: '',
                 data: '',
-                imagens: [],
+                imagens: [
+                    {
+                        url:""
+                    }
+                ],
                 destaque: '',
                 resumo: '',
                 texto: ''
@@ -35,7 +39,11 @@ export class NoticiasController {
                 subtitulo: '',
                 autor: '',
                 data: '',
-                imagens: [],
+                imagens: [
+                    {
+                        url:""
+                    }
+                ],
                 destaque: '',
                 resumo: '',
                 texto: ''
@@ -49,7 +57,11 @@ export class NoticiasController {
                 subtitulo: '',
                 autor: '',
                 data: '',
-                imagens: [],
+                imagens: [
+                    {
+                        url:""
+                    }
+                ],
                 destaque: '',
                 resumo: '',
                 texto: ''
@@ -63,7 +75,11 @@ export class NoticiasController {
                 subtitulo: '',
                 autor: '',
                 data: '',
-                imagens: [],
+                imagens: [
+                    {
+                        url:""
+                    }
+                ],
                 destaque: '',
                 resumo: '',
                 texto: ''
@@ -77,7 +93,11 @@ export class NoticiasController {
                 subtitulo: '',
                 autor: '',
                 data: '',
-                imagens: [],
+                imagens: [
+                    {
+                        url:""
+                    }
+                ],
                 destaque: '',
                 resumo: '',
                 texto: ''

@@ -34,7 +34,7 @@ export class HomePage implements OnInit{
   
 
   irParaDetalhes(id: string) {
-    this.router.navigate(['/detalhes-noticia', {id}])
+    this.router.navigate(['/detalhes-noticia', `${id}`])
   }
 
   irParaCadastrarNoticia() {

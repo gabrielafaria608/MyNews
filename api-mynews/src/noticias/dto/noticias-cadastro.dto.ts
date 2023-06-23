@@ -1,4 +1,6 @@
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString, isArray, MinLength } from "class-validator"
+import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString, isArray, MinLength, ValidateNested, Min } from "class-validator"
+import { ImagemNoticiaDto } from "./noticias-imagem.dto"
+import { Type } from "class-transformer"
 
 export class NoticiasCadastroDto {
     @IsString({message: "O campo titulo deve ser do tipo string"})
@@ -21,10 +23,10 @@ export class NoticiasCadastroDto {
     @MinLength(10, {message: "O campo data deve ter no mínimo 10 dígitos"})
     data: string
 
-    @IsArray()
-    @ArrayNotEmpty()
-    @IsNotEmpty({message: "O campo imagens não pode ser vazio"})
-    imagens: string []
+    @ValidateNested()
+    @Min(1, { message: 'Cadastre no mínimo 1 foto'})
+    @Type(() => ImagemNoticiaDto)
+    imagens: ImagemNoticiaDto[]
 
     @IsString({message: "O campo destaque deve ser do tipo string"})
     @IsNotEmpty({message: "O campo destaque não pode ser vazio"})
