@@ -2,18 +2,25 @@ ion-toolbar{
   --background:#F23005;
   --color: #F2EFDF;
   height: 60px;
-
+  #header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
   ion-button{
     --background:#F23005;
     --color: #F2EFDF;
-    --background-hover: #F2622E;
     --background-activated: #F2622E;
+  }
+  img{
+    width: 115px;
+  }
+  p{
+    color: #F23005;
+
   }
 }
 ion-content{
-  #container{
-  margin-top: 26px;
-  }
   ion-searchbar{
     --background:#F2622E;
     --color:#F2EFDF;

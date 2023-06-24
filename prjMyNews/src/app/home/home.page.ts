@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NoticiaService } from '../services/noticia/noticia.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,6 +12,7 @@ export class HomePage implements OnInit{
   noticias: any[] = []
   mensagem: string = ""
   filtro: string = ""
+  logo: string = '/assets/icon/logo.svg'
 
   constructor(
     private readonly service: NoticiaService,

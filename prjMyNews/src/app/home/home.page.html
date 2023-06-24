@@ -1,19 +1,19 @@
 <ion-header [translucent]="false">
   <ion-toolbar>
-    <ion-title>
-      MY NEWS
-    </ion-title>
-    <ion-button (click)="buscarTodos()" class="ion-padding-start">
+    <div id="header">
+    <ion-button (click)="buscarTodos()" >
       <ion-icon slot="start" name="refresh-outline"></ion-icon>
     </ion-button>
+    <img [src]="logo" alt="">
+    <p>some</p>
+  </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="false" class="design"> 
-  <div id="container">
-
+  <div>
     <div>
-      <ion-searchbar [(ngModel)]="filtro" placeholder="" show-clear-button="focus" (ionInput)="filtrar()" [debounce]="1000"> 
+      <ion-searchbar [(ngModel)]="filtro" placeholder="" show-clear-button="focus" (ionInput)="filtrar()"> 
       </ion-searchbar>
     </div>
 

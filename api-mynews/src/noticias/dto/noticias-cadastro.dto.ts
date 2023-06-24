@@ -23,7 +23,6 @@ export class NoticiasCadastroDto {
     @MinLength(10, {message: "O campo data deve ter no mínimo 10 dígitos"})
     data: string
 
-    @ValidateNested()
     @Min(1, { message: 'Cadastre no mínimo 1 foto'})
     @Type(() => ImagemNoticiaDto)
     imagens: ImagemNoticiaDto[]
