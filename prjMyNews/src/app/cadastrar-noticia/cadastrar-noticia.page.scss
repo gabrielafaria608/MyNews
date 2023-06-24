@@ -1,8 +1,12 @@
 ion-toolbar{
     --background:#F23005;
     --color: #F2EFDF;
+    height: 60px;
     ion-back-button{
         --color:#F2EFDF;
+    }
+    ion-title{
+        margin-top: 10px;
     }
 }
 ion-item{

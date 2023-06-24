@@ -1,22 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Noticia: {{noticia.titulo}}</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+          MY NEWS
+      </ion-title>
+      <ion-button (click)="excluir(noticia.id)" slot="end">
+          <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-list *ngIf="noticia !== undefined">
-    <ion-item>ID: {{noticia.id}}</ion-item>
-    <ion-item>Titulo: {{noticia.titulo}}</ion-item>
-    <ion-item>Subtitulo: {{noticia.subtitulo}}</ion-item>
-    <ion-item>Autor: {{noticia.autor}}</ion-item>
-    <ion-item>Data: {{noticia.data}}</ion-item>
-    <ion-item>Imagens: {{noticia.imagens}}</ion-item>
-    <ion-item>Destaque: {{noticia.destaque}}</ion-item>
-    <ion-item>Resumo: {{noticia.resumo}}</ion-item>
-    <ion-item>Texto: {{noticia.texto}}</ion-item>
-  </ion-list>
+<ion-content [fullscreen]="false" class="design"> 
+
+    <ion-card *ngIf="noticia !== undefined">
+      <img alt="" src="{{noticia.destaque}}"/>
+      <ion-card-header>
+          <ion-card-title>{{noticia.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{noticia.subtitulo}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="ion-no-padding">
+          <ion-item-group>
+              <ion-item-divider>
+                  <ion-label>Data de publicação: {{noticia.data}} <br> Autor: {{noticia.autor}}</ion-label>
+              </ion-item-divider>
+              <ion-item>{{noticia.resumo}}</ion-item>
+          </ion-item-group>
+          <div *ngFor="let imagem of noticia.imagens">
+              <ion-item>
+                <ion-img [src]="imagem.url"></ion-img>
+              </ion-item>
+          </div>
+              <ion-item>{{noticia.texto}}</ion-item>
+              
+      </ion-card-content>
+    </ion-card>
+  
 </ion-content>
