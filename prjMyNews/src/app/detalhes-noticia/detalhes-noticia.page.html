@@ -1,39 +1,44 @@
 <ion-header [translucent]="false">
   <ion-toolbar>
+    <div id="header">
       <ion-buttons slot="start">
           <ion-back-button text=""></ion-back-button>
       </ion-buttons>
-      <ion-title>
-          MY NEWS
-      </ion-title>
+      <img [src]="logo" alt="" (click)="irParaHome()">
       <ion-button (click)="excluir(noticia.id)" slot="end">
           <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="false" class="design"> 
 
     <ion-card *ngIf="noticia !== undefined">
-      <img alt="" src="{{noticia.destaque}}"/>
+      <img alt="" [src]="noticia.destaque"/>
       <ion-card-header>
           <ion-card-title>{{noticia.titulo}}</ion-card-title>
           <ion-card-subtitle>{{noticia.subtitulo}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content class="ion-no-padding">
-          <ion-item-group>
+        <div id="conteudo">
+          <div>
+            <ion-item-group>
               <ion-item-divider>
                   <ion-label>Data de publicação: {{noticia.data}} <br> Autor: {{noticia.autor}}</ion-label>
               </ion-item-divider>
-              <ion-item>{{noticia.resumo}}</ion-item>
-          </ion-item-group>
+              <ion-item lines="none">{{noticia.resumo}}</ion-item>
+            </ion-item-group>
+          </div>
           <div *ngFor="let imagem of noticia.imagens">
-              <ion-item>
+              <ion-item lines="none">
                 <ion-img [src]="imagem.url"></ion-img>
               </ion-item>
           </div>
-              <ion-item>{{noticia.texto}}</ion-item>
-              
+          <div>
+            <ion-item lines="none">{{noticia.texto}}</ion-item>
+          </div>
+        </div>
       </ion-card-content>
     </ion-card>
   

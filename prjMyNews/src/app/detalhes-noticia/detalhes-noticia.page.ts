@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class DetalhesNoticiaPage implements OnInit {
   noticia: any
   mensagem: string = ''
+  logo: string = '/assets/icon/logo.svg'
+
 
   constructor(
     private readonly activeRoute: ActivatedRoute,
