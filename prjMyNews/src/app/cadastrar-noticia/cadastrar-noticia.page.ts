@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiaService } from '../services/noticia/noticia.service';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -9,6 +11,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./cadastrar-noticia.page.scss'],
 })
 export class CadastrarNoticiaPage implements OnInit {
+    logo: string = '/assets/icon/logo.svg'
+
     titulo: string = ''
     subtitulo: string = ''
     autor: string =  ''
@@ -19,7 +23,8 @@ export class CadastrarNoticiaPage implements OnInit {
     texto: string = ''
   constructor(
     private readonly service: NoticiaService,
-    private readonly alert: AlertController
+    private readonly alert: AlertController,
+    private readonly router: Router
   ) { }
 
   ngOnInit() {
@@ -67,5 +72,8 @@ export class CadastrarNoticiaPage implements OnInit {
         await mensagem.present();
       }
     })
+  }
+  irParaHome() {
+    this.router.navigate(['/home'])
   }
 }

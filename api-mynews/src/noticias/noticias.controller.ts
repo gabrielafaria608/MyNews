@@ -14,6 +14,25 @@ export class NoticiasController {
     }
 
     private async preCadastrarNoticias() {
+        this._repository.createNoticia
+        this._repository.createNoticia(
+            {
+                id: uuid(),
+                titulo: 'Por Que o ChatGPT Não é Tão Inteligente Quanto Muitos Acreditam?',
+                subtitulo: '',
+                autor: 'David Matos',
+                data: '24-04-2023',
+                imagens: [
+                    {
+                        url:"https://i0.wp.com/www.cienciaedados.com/wp-content/uploads/2023/04/Por-Que-o-ChatGPT-Nao-e-Tao-Inteligente-Quanto-Muitos-Acreditam.jpg?resize=1024%2C623&ssl=1"
+                    }
+                ],
+                destaque: 'https://s2-g1.glbimg.com/98GVMNu9tYEQ3Xpr9U-V9B1WEBI=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/v/l/6GUX2bRA6sSkinYZeQIQ/120871608-gettyimages-1047259374.jpeg',
+                resumo: 'Embora essa tecnologia de Inteligência Artificial seja impressionante, é errado confiar nela 100%. Qual é o problema? Eu tenho alguns pontos para você considerar.',
+                texto: 'O ChatGPT é um chatbot de IA feito pela empresa OpenAI e é amado por sua incrível capacidade de gerar imitações convincentes da escrita humana. De fato, quando apareceu pela primeira vez em público em novembro de 2022, a reação foi, no mínimo, uau. Influenciadores como Marc Andreessen e Bill Gates o chamaram de “pura magia” e “a melhor coisa já criada na computação”. Tanto especialistas em vários campos quanto usuários comuns compartilharam esse espanto generalizado.Eles testaram o ChatGPT para suas necessidades, escreveram dezenas de artigos sobre sua frieza e previram o breve desaparecimento de algumas profissões como obsoletas.Mas……Espere. O ChatGPT não é tão inteligente (pelo menos por enquanto). A inteligência do ChatGPT é supervalorizada, embora as conversas com ele lembrem as conversas com um humano, o fato é que o ChatGPT não entende o significado do que está “dizendo”. O ChatGPT é tendencioso, comete erros e fornece informações falsas (nesse aspecto é quase um ser humano….rsrsrs)… Ah, sim! Se você disser que está errado, o chatbot irá admitir. Mas e se você não apontar o erro, aceitando suas informações como corretas?Abaixo estão alguns grandes problemas com o ChatGPT. Aqueles que acreditam que ele pode resolver todos os seus problemas, substituí-los no trabalho e responder a todas as suas perguntas devem considerar essas questões.E lembre-se: Em 2017 previram que o Radiologista seria substituído 100% pela IA e que os carros autônomos estariam por aí substituindo motoristas graças à IA. Bom, estamos em 2023 e ainda esperando essas previsões se tornarem realidade. Cuidado com os “Influencers”. Eles querem apenas engajamento em redes sociais e não têm qualquer cuidado ou responsabilidade em suas previsões.Informações Genéricas Sem Contexto Problema: ChatGPT não entende a complexidade da linguagem humana; ele apenas gera palavras e não entende o contexto – o resultado: são informações muito genéricas, sem profundidade ou insights e respostas erradas.Este chatbot é um LLM (Large Language Model) treinado em enormes bancos de dados de texto e, portanto, capaz de gerar texto coerente sobre muitos tópicos. E é incrível! Mas: Isso significa que o ChatGPT (assim como outros geradores de texto) não faz nada além de usar os padrões estatísticos desses bancos de dados para prever prováveis sequências de palavras. Ou seja, ele não conhece o significado das palavras e não consegue compreender a semântica por trás dessas palavras. Como resultado, ele gera respostas com base em uma determinada entrada sem contexto, profundidade ou insights únicos.'
+            } as NoticiasEntity
+        )
+        
         this._repository.createNoticia(
             {
                 id: uuid(),
@@ -23,7 +42,10 @@ export class NoticiasController {
                 data: '30-06-2021',
                 imagens: [
                     {
-                        url:"https://s2-g1.glbimg.com/VnSQR420Ew1eiFUKh4NR0jb31jo=/0x0:2048x1231/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/W/i/JCOT94SQq38C5j4n3Djw/game-android.jpg"
+                        url:"https://s2.glbimg.com/TA3n9iXSs3BbGC9QtWO1qpxLxz8=/620x430/e.glbimg.com/og/ed/f/original/2022/03/18/google_play_store.jpg"
+                    },
+                    {
+                        url:"https://hd2.tudocdn.net/802131?w=1200&h=900"
                     }
                 ],
                 destaque: 'https://s2-g1.glbimg.com/VnSQR420Ew1eiFUKh4NR0jb31jo=/0x0:2048x1231/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/W/i/JCOT94SQq38C5j4n3Djw/game-android.jpg',
@@ -42,7 +64,7 @@ export class NoticiasController {
                 data: '30-06-2021',
                 imagens: [
                     {
-                        url:"https://s2-g1.glbimg.com/nJxfdqAZogdWCbsC6BVe-TY3_YE=/0x0:1279x659/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/w/S/7TBIfrQFyBmLV3kHA3mw/teclado-acorrentado.jpg"
+                        url:"https://wellingtonagapto.com.br/wp-content/uploads/2023/03/Microsoft-corrige-74-vulnerabilidades-em-seu-Patch-Tuesday-de-marco-2-770x390.png"
                     }
                 ],
                 destaque: 'https://s2-g1.glbimg.com/nJxfdqAZogdWCbsC6BVe-TY3_YE=/0x0:1279x659/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/w/S/7TBIfrQFyBmLV3kHA3mw/teclado-acorrentado.jpg',
@@ -60,7 +82,7 @@ export class NoticiasController {
                 data: '16-06-2023',
                 imagens: [
                     {
-                        url:"https://s2-g1.glbimg.com/xBTZIYNBH8x45bssZQeEmpR3iJY=/0x0:1024x711/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/e/5/tpfAJuQiOkSJuqB5kUag/ap16145604471751.jpg"
+                        url:"https://misterpostman.com.br/wp-content/uploads/2022/08/Ultimas-atualizacoes-da-tecnologia-de-inteligencia-artificial-scaled-1-jpg.webp"
                     }
                 ],
                 destaque: 'https://s2-g1.glbimg.com/xBTZIYNBH8x45bssZQeEmpR3iJY=/0x0:1024x711/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/e/5/tpfAJuQiOkSJuqB5kUag/ap16145604471751.jpg',
@@ -78,7 +100,7 @@ export class NoticiasController {
                 data: '14-06-2023',
                 imagens: [
                     {
-                        url:"https://s2-g1.glbimg.com/BqpVAVpTrXmw914FrCt-r2kppvc=/0x0:800x450/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/K/j/K6oqziRBAczEBiSPNc1A/dfd7add0-0958-11ee-b5af-25e80c61c11a.jpg"
+                        url:"https://itforum.com.br/wp-content/uploads/2023/02/ia-inteligencia-artificial.jpg"
                     }
                 ],
                 destaque: 'https://s2-g1.glbimg.com/BqpVAVpTrXmw914FrCt-r2kppvc=/0x0:800x450/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/K/j/K6oqziRBAczEBiSPNc1A/dfd7add0-0958-11ee-b5af-25e80c61c11a.jpg',
@@ -87,23 +109,7 @@ export class NoticiasController {
             } as NoticiasEntity
         )
 
-        this._repository.createNoticia(
-            {
-                id: uuid(),
-                titulo: 'Usuários relatam instabilidade no WhatsApp, Instagram e Facebook nesta sexta',
-                subtitulo: 'WhatsApp registrou mais de 10 mil relatos por volta das 16h30 no site Downdetector, que monitora falhas em aplicativos. Número de reclamações voltou ao normal às 17h40.',
-                autor: 'Manuel Carlos',
-                data: '16-06-2023',
-                imagens: [
-                    {
-                        url:"https://s2-g1.glbimg.com/QU065zcV8N53ZkxUixifr0-ag4I=/0x0:800x538/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/O/G/hKkRpKQTufEdwBjIXzvA/a87729d0-f2a9-11ed-a142-ab0e42bfd9c3.jpg"
-                    }
-                ],
-                destaque: 'https://s2-g1.glbimg.com/QU065zcV8N53ZkxUixifr0-ag4I=/0x0:800x538/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/O/G/hKkRpKQTufEdwBjIXzvA/a87729d0-f2a9-11ed-a142-ab0e42bfd9c3.jpg',
-                resumo: 'Usuários enfrentaram instabilidade no WhatsApp, Instagram e Facebook.',
-                texto: 'Usuários enfrentaram instabilidade no WhatsApp, Instagram e Facebook, com dificuldades para enviar áudios e problemas na exibição de imagens e publicação de stories. A empresa responsável pelas plataformas, Meta, reconheceu os problemas e afirmou estar trabalhando para resolvê-los o mais rápido possível. O Downdetector registrou um pico de notificações sobre falhas nos aplicativos, que retornaram ao normal algumas horas depois. Os usuários relataram dificuldades no envio de mensagens, áudios e postagens nas redes sociais.'
-            } as NoticiasEntity
-        )
+        
     }
 
     @Post()

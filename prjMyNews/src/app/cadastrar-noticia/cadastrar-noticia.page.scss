@@ -2,11 +2,23 @@ ion-toolbar{
     --background:#F23005;
     --color: #F2EFDF;
     height: 60px;
+    #header{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
     ion-back-button{
         --color:#F2EFDF;
     }
     ion-title{
         margin-top: 10px;
+    }
+    img{
+        width: 115px;
+    }
+      p{
+        color: #F23005;
+    
     }
 }
 ion-item{
@@ -20,7 +32,11 @@ ion-item{
 ion-content{
     --background: #F2EFDF;
     --color: #00010D;
-    --ion-fonte-family: Arial, Helvetica, sans-serif;
+
+    h1{
+        padding: 10px;
+        margin-left: 20%;
+    }
     ion-button{
         --background:#F23005;
         --background-hover: #F2622E;
