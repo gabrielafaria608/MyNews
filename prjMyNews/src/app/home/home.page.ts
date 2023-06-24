@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit{
   noticias: any[] = []
   mensagem: string = ""
+  filtro: string = ""
 
   constructor(
     private readonly service: NoticiaService,
@@ -18,6 +19,25 @@ export class HomePage implements OnInit{
 
   ngOnInit(): void {
     this.buscarTodos()
+  }
+
+  filtrar() {
+    if (this.filtro.length === 0) {
+      this.buscarTodos()
+      return 
+    }
+
+    if (this.noticias.length > 1) {
+      let noticia = this.noticias.find((a: any) => a.titulo === this.filtro)
+
+      if (noticia !== undefined){
+        this.mensagem = ''
+        this.noticias = []
+        this.noticias.push(noticia)
+      } else if (this.filtro.length > 10) {
+        this.mensagem = 'Noticia não encontrada'
+      }
+    }
   }
 
   buscarTodos() {
@@ -30,8 +50,6 @@ export class HomePage implements OnInit{
       }
     })
   }
-
-  
 
   irParaDetalhes(id: string) {
     this.router.navigate(['/detalhes-noticia', `${id}`])

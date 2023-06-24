@@ -1,6 +1,8 @@
 ion-toolbar{
   --background:#F23005;
   --color: #F2EFDF;
+  height: 60px;
+
   ion-button{
     --background:#F23005;
     --color: #F2EFDF;
@@ -11,6 +13,10 @@ ion-toolbar{
 ion-content{
   #container{
   margin-top: 26px;
+  }
+  ion-searchbar{
+    --background:#F2622E;
+    --color:#F2EFDF;
   }
   ion-card{
     --background: #F2622E;

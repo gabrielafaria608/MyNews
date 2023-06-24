@@ -12,6 +12,11 @@
 <ion-content [fullscreen]="false" class="design"> 
   <div id="container">
 
+    <div>
+      <ion-searchbar [(ngModel)]="filtro" placeholder="" show-clear-button="focus" (ionInput)="filtrar()" [debounce]="1000"> 
+      </ion-searchbar>
+    </div>
+
     <ion-card *ngFor="let noticia of noticias" (click)="irParaDetalhes(noticia.id)">
       <img alt="" src="{{noticia.destaque}}" />
       <ion-card-header>
