@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NoticiaService {
-  private readonly URL = "https://3000-gabssfaria7-3jpamii2023-sp5502ykhb1.ws-us100.gitpod.io/noticias"
+  private readonly URL = "https://3000-gabssfaria7-3jpamii2023-sp5502ykhb1.ws-us101.gitpod.io/noticias"
 
   constructor(
     private readonly http: HttpClient
