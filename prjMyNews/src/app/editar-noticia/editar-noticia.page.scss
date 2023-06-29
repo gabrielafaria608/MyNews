@@ -10,17 +10,15 @@ ion-toolbar{
     ion-back-button{
         --color:#F2EFDF;
     }
-    ion-title{
-        margin-top: 10px;
-    }
     img{
         width: 115px;
     }
-      p{
+    p{
         color: #F23005;
     
     }
 }
+
 ion-item{
     --background: #F2EFDF;
     --color: #00010D;
@@ -35,7 +33,7 @@ ion-content{
 
     h1{
         padding: 10px;
-        margin-left: 20%;
+        margin-left: 26%;
     }
     ion-button{
         --background:#F23005;
@@ -50,7 +48,6 @@ ion-content{
         --border-style: solid;
         --border-width: 1px;
     }
-
     ion-fab-button{
         --background:#F23005;
         --background-activated: #F2622E;

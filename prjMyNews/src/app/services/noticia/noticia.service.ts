@@ -26,5 +26,8 @@ export class NoticiaService {
 
   excluirNoticia(id: string): Observable<any> {
     return this.http.delete(`${this.URL}/${id}`)
-  }
+}
+  atualizarNoticia(id:string, novosDadosNoticia: any): Observable<any>{
+    return this.http.put(`${this.URL}/${id}`, novosDadosNoticia)
+}
 }

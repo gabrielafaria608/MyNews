@@ -5,7 +5,7 @@
           <ion-back-button text=""></ion-back-button>
       </ion-buttons>
       <img [src]="logo" alt="" (click)="irParaHome()">
-      <ion-button (click)="excluir(noticia.id)" slot="end">
+      <ion-button (click)="excluir()" slot="end">
           <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </div>
@@ -41,5 +41,11 @@
         </div>
       </ion-card-content>
     </ion-card>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="irParaEditarNoticia(noticia.id)">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   
 </ion-content>

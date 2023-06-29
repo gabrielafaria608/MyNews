@@ -85,6 +85,12 @@ export class CadastrarNoticiaPage implements OnInit {
     })
   }
 
+  cancelar(){
+    this.noticia = {} as Noticia
+
+    this.irParaHome()
+  }
+
   adicionarFoto() {
     this.noticia.imagens.push({url:""})
   }

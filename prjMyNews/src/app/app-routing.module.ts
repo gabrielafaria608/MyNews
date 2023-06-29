@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'cadastrar-noticia',
     loadChildren: () => import('./cadastrar-noticia/cadastrar-noticia.module').then( m => m.CadastrarNoticiaPageModule)
   },
+  {
+    path: 'editar-noticia',
+    loadChildren: () => import('./editar-noticia/editar-noticia.module').then( m => m.EditarNoticiaPageModule)
+  },
 ];
 
 @NgModule({

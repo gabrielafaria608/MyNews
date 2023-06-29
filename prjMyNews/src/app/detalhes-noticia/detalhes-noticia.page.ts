@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NoticiaService } from '../services/noticia/noticia.service';
 import { ViewDidEnter } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 
 @Component({
@@ -14,12 +16,16 @@ export class DetalhesNoticiaPage implements OnInit {
   noticia: any
   mensagem: string = ''
   logo: string = '/assets/icon/logo.svg'
+  noticias: any[] = []
+
 
 
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly service: NoticiaService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly alert: AlertController
+
   ) {}
 
   ngOnInit() {
@@ -37,19 +43,66 @@ export class DetalhesNoticiaPage implements OnInit {
   }
 
 
-  excluir(id: string) {
-    this.service.excluirNoticia(id).subscribe({
-      next: (resp: any) => {
-        this.mensagem = resp.message
+  buscarTodos() {
+    this.service.buscarTodos().subscribe({
+      next: (dados: any) => {
+        this.noticias = dados
+        console.log({
+          noticias: this.noticias
+        })
       }
     })
-    setTimeout(
-      () => {
-        this.irParaHome()
-      }, 1500
-    )
   }
+
   irParaHome() {
     this.router.navigate(['/home'])
+  }
+
+  irParaEditarNoticia(id: string) {
+    this.router.navigate(['/editar-noticia',{id}])
+  }
+
+  async excluir() {
+    let confirm = await this.alert.create({
+      header: 'Atenção',
+      message: `Tem certeza que deseja excluir a noticia ${this.noticia.titulo}?`,
+      backdropDismiss: false,
+      buttons: [
+        {
+          text: 'Sim',
+          handler: () => {
+            this.service.excluirNoticia(this.noticia.id).subscribe({
+              next: async (dados: any) => {
+
+                confirm.dismiss()
+
+                let message = await this.alert.create({
+                  header: 'Mensagem',
+                  message: dados.message
+                })
+
+                await message.present()
+              },
+              error: async (error: any) => {
+                confirm.dismiss()
+
+                let message = await this.alert.create({
+                  header: 'Mensagem',
+                  message: error.error.message
+                })
+
+                await message.present()
+                
+              }
+            })
+          }
+        },
+        {
+          text: 'Não',
+          handler: () => { }
+        }
+      ]
+    })
+    await confirm.present()
   }
 }
