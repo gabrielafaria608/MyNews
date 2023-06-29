@@ -18,11 +18,38 @@ export class NoticiasRepository{
     }
 
     async findByID(id:string){
-        const noticia = this._noticias.find(
+        const noticia: NoticiasEntity = this._noticias.find(
             (a: NoticiasEntity) => a.id === id,
         );
         return noticia;
     }
+
+    private _getIndex(id:string){
+        const index: number = this._noticias.findIndex(
+            (a: NoticiasEntity) => a.id === id,
+          );
+      
+          return index;
+    }
+
+    async update(id: string, noticia: NoticiasEntity) {
+        let index = this._getIndex(id);
+    
+        if (index < 0) {
+          return {
+            message: 'Aluno(a) não encontrado(a)',
+          };
+        }
+    
+        noticia.id = id;
+    
+        this._noticias[index] = noticia;
+    
+        return {
+          message: 'Noticia atualizada com sucesso',
+          data: this._noticias[index],
+        };
+      }
 
     async removeNoticia(id:string){
         const endereco = this._noticias.findIndex(

@@ -134,12 +134,7 @@ export class NoticiasController {
         noticiaEntity.resumo = noticia.resumo
         noticiaEntity.texto = noticia.texto
 
-        this._repository.createNoticia(noticiaEntity)
-
-        return{
-            mensagem: 'Cadastro de noticias',
-            data: noticiaEntity
-        }
+        return this._repository.createNoticia(noticiaEntity)
 
     }
 
@@ -153,6 +148,22 @@ export class NoticiasController {
     getNoticia(@Param() param: any){
         return this._repository.findByID(param.id)        
     }
+
+    @Put(':id')
+    updateNoticia(@Param('id') id, @Body() noticia: NoticiasCadastroDto) {
+    const noticiaEntity: NoticiasEntity = new NoticiasEntity();
+
+        noticiaEntity.titulo = noticia.titulo
+        noticiaEntity.subtitulo = noticia.subtitulo
+        noticiaEntity.autor = noticia.autor
+        noticiaEntity.data = noticia.data
+        noticiaEntity.imagens = noticia.imagens
+        noticiaEntity.destaque = noticia.destaque
+        noticiaEntity.resumo = noticia.resumo
+        noticiaEntity.texto = noticia.texto
+
+    return this._repository.update(id, noticiaEntity);
+  }
 
     @Delete(':id')
     removeNoticia(@Param() param: any){
