@@ -15,44 +15,47 @@
   <ion-list>
     <ion-item>
       <ion-label position="floating">Titulo</ion-label>
-      <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.titulo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Subtítulo</ion-label>
-      <ion-input type="text" [(ngModel)]="subtitulo"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.subtitulo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Autor</ion-label>
-      <ion-input [(ngModel)]="autor"></ion-input>
+      <ion-input [(ngModel)]="noticia.autor"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Data</ion-label>
-      <ion-input type="text" [(ngModel)]="data"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.data"></ion-input>
     </ion-item>
+    <div *ngFor="let imagem of noticia.imagens">
     <ion-item>
-      <ion-label position="floating">Imagem 1</ion-label>
-      <ion-input type="text" [(ngModel)]="imagens[0]"></ion-input>
+      <ion-label position="floating">Imagem</ion-label>
+      <ion-input type="url" [(ngModel)]="imagem.url"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Imagem 2</ion-label>
-      <ion-input type="text" [(ngModel)]="imagens[1]"></ion-input>
-    </ion-item>
+    </div>
     <ion-item>
       <ion-label position="floating">Destaque</ion-label>
-      <ion-input type="text" [(ngModel)]="destaque"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.destaque"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Resumo</ion-label>
-      <ion-input type="text" [(ngModel)]="resumo"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.resumo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Texto</ion-label>
-      <ion-input type="text" [(ngModel)]="texto"></ion-input>
+      <ion-input type="text" [(ngModel)]="noticia.texto"></ion-input>
     </ion-item>
   </ion-list>
   <div>
     <ion-button expand="block" (click)="cadastrar()" class="ion-margin">
       Cadastrar
     </ion-button>
+    <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+      <ion-fab-button color="secondary" (click)="adicionarFoto()">
+        <ion-icon name="image"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   </div>
 </ion-content>

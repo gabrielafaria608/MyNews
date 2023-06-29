@@ -3,6 +3,19 @@ import { NoticiaService } from '../services/noticia/noticia.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+interface Imagem{
+  url: string
+}
+interface Noticia{
+  titulo: string
+    subtitulo: string
+    autor: string
+    data: string
+    imagens: Imagem[]
+    destaque: string
+    resumo: string
+    texto: string
+}
 
 
 @Component({
@@ -12,66 +25,68 @@ import { Router } from '@angular/router';
 })
 export class CadastrarNoticiaPage implements OnInit {
     logo: string = '/assets/icon/logo.svg'
+    noticia: Noticia
 
-    titulo: string = ''
-    subtitulo: string = ''
-    autor: string =  ''
-    data: string = ''
-    imagens: string[] = []
-    destaque: string = ''
-    resumo: string = ''
-    texto: string = ''
   constructor(
     private readonly service: NoticiaService,
     private readonly alert: AlertController,
     private readonly router: Router
-  ) { }
+  ) { 
+    this.noticia = this.gerarNovaNoticia()
+  }
 
   ngOnInit() {
   }
+
+  gerarNovaNoticia(): Noticia {
+    return {titulo: '', subtitulo: '', autor: '', data: '', destaque: '',resumo: '', texto: '', imagens: [{url:""}]}
+  }
+
+
   async cadastrar() {
-    let noticia = {
-      titulo: this.titulo,
-      subtitulo: this.subtitulo,
-      autor: this.autor,
-      data: this.data,
-      imagens: [this.imagens],
-      destaque: this.destaque,
-      resumo: this.resumo,
-      texto: this.texto
-
-    }
-
-    this.service.cadastrarNoticia(noticia).subscribe({
+    console.log(this.noticia)
+    this.service.cadastrarNoticia(this.noticia).subscribe({
       next: async (dados: any) => {
         console.log(dados)
 
-        const mensagem = await this.alert.create({
-          header: 'Mensagem',
-          message: 'Notícia cadastrada com sucesso!',
-          buttons: ['OK'],
+        let alertMessage = await this.alert.create({
+          message: dados.message,
+          backdropDismiss: false,
+          header: 'Cadastro de noticia',
+          buttons: [
+            {
+              text: 'OK',
+              handler: () => {
+                this.noticia = this.gerarNovaNoticia()
+              }
+            }
+          ],
         });
     
-        await mensagem.present();
+        await alertMessage.present();
       },
       error: async (error: any) => {
-        console.error(error)
+        let errors = `<ul>`
 
-        let erros = ''
+        error.error.message.forEach((message: string) => errors += `<li>${message}</li>`)
 
-        error.error.message.forEach(
-          (erro: any) => erros += erro + '<br>'
-        )
+        errors += `</ul>`
 
-        const mensagem = await this.alert.create({
-          header: 'Mensagem',
-          message: erros,
-          buttons: ['OK']
-        });
-    
-        await mensagem.present();
-      }
+        console.log(errors)
+        let alertMessage = await this.alert.create({
+          message: errors,
+          backdropDismiss: false,
+          header: 'Erro ao cadastrar noticia',
+          buttons: ['OK'],
+        })
+
+        await alertMessage.present()
+      },
     })
+  }
+
+  adicionarFoto() {
+    this.noticia.imagens.push({url:""})
   }
   irParaHome() {
     this.router.navigate(['/home'])

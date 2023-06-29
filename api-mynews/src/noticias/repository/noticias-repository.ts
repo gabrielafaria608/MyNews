@@ -6,7 +6,11 @@ export class NoticiasRepository{
     private readonly _noticias: NoticiasEntity[] = []
 
     async createNoticia(noticia: NoticiasEntity){
-        this._noticias.push(noticia)
+        this._noticias.push(noticia);
+        return{
+            message: 'Noticia cadastrada com sucesso',
+            data:noticia,
+        };
     }
 
     async listNoticias(){
@@ -15,15 +19,15 @@ export class NoticiasRepository{
 
     async findByID(id:string){
         const noticia = this._noticias.find(
-            (a: NoticiasEntity) => a.id === id
-        )
-        return noticia
+            (a: NoticiasEntity) => a.id === id,
+        );
+        return noticia;
     }
 
     async removeNoticia(id:string){
         const endereco = this._noticias.findIndex(
-            (a: NoticiasEntity) => a.id === id
-        )
+            (a: NoticiasEntity) => a.id === id,
+        );
         this._noticias.splice(endereco,1)
         return {message:`Noticia com o id ${id} removida com sucesso`}
     }

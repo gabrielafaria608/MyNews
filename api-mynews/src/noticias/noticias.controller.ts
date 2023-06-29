@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post, RequestMethod } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Param,
+    Post,
+    Put,
+  } from '@nestjs/common';
 import { NoticiasRepository } from './repository/noticias-repository';
 import { NoticiasCadastroDto } from './dto/noticias-cadastro.dto';
 import { NoticiasEntity} from './entity/noticias-entity';
@@ -14,7 +22,6 @@ export class NoticiasController {
     }
 
     private async preCadastrarNoticias() {
-        this._repository.createNoticia
         this._repository.createNoticia(
             {
                 id: uuid(),
@@ -114,7 +121,7 @@ export class NoticiasController {
 
     @Post()
     createNoticia(@Body() noticia: NoticiasCadastroDto){
-        let noticiaEntity = new NoticiasEntity()
+        const noticiaEntity: NoticiasEntity = new NoticiasEntity();
 
 
         noticiaEntity.id = uuid()

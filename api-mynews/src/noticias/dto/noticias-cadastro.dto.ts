@@ -1,4 +1,14 @@
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString, isArray, MinLength, ValidateNested, Min } from "class-validator"
+import {
+    ArrayMinSize,
+    IsInt,
+    IsNotEmpty,
+    IsString,
+    Max,
+    MaxLength,
+    Min,
+    MinLength,
+    ValidateNested,
+  } from 'class-validator';
 import { ImagemNoticiaDto } from "./noticias-imagem.dto"
 import { Type } from "class-transformer"
 
@@ -23,7 +33,8 @@ export class NoticiasCadastroDto {
     @MinLength(10, {message: "O campo data deve ter no mínimo 10 dígitos"})
     data: string
 
-    @Min(1, { message: 'Cadastre no mínimo 1 foto'})
+    @ValidateNested()
+    @ArrayMinSize(1, { message: 'Cadastre no mínimo 1 foto' })
     @Type(() => ImagemNoticiaDto)
     imagens: ImagemNoticiaDto[]
 

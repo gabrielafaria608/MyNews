@@ -1,3 +1,3 @@
 export class NoticiasImagensEntity  {
-    url: string
+    url: string;
 }
